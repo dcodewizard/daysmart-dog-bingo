@@ -2,6 +2,10 @@
   <div class="content">
     <h1>{{ title }}</h1>
   </div>
+  <dog-bingo-input 
+    (cardMetricEvent)="onCardMetricEvent($event)"
+    (cardGenerateClick)="onCardGenerateClick()"
+  />
 </main>
 
 <router-outlet />

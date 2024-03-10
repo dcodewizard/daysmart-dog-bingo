@@ -1,0 +1,38 @@
+<div>
+  <div>
+    <section>
+      Generate 
+      <input 
+        type="number" 
+        min="0"
+        max="5"
+        [(ngModel)]="cardCount" 
+        (input)="onCardMetricsEvent()"
+      >
+      random bingo cards
+    </section>
+    <section>
+      each with
+      <input 
+        type="number" 
+        min="0"
+        max="5"
+        [(ngModel)]="cardDimension" 
+        (input)="onCardMetricsEvent()"
+      >
+        rows/columns
+    </section>
+    <section>
+      <button 
+        type="button" 
+        class="btn btn-primary"
+        [disabled]="!canGenerateCards"
+        (click)="onCardGenerateClick()"
+      >
+        Generate
+      </button>
+    </section>
+  </div>
+</div>
+
+
