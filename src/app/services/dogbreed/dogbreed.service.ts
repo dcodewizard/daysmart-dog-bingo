@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, map, tap, of, catchError,  } from 'rxjs';
+import { Observable, map, tap, of, catchError, } from 'rxjs';
+import { shuffle, slice } from 'lodash'
 
 import type { ListAllBreedsResponse } from './dogbreed.service.types';
 
@@ -14,11 +15,7 @@ export class DogbreedService {
 
   constructor(private http: HttpClient) { }
 
-  public getCachedDogBreeds(): string[] {
-    return this.cachedDogBreeds;
-  }
-
-  public fetchAndCacheBreeds(): Observable<Error|null> {
+  public fetchAndCacheBreeds(): Observable<Error | null> {
     const targetURL = this.getAPIEndpointFor(`breeds/list/all`);
     return this.http.get<ListAllBreedsResponse>(targetURL).pipe(
       map(response => Object.keys(response.message)),
@@ -26,6 +23,17 @@ export class DogbreedService {
       map(r => null),
       catchError(error => of(error as Error))
     );
+  }
+
+  public getRandomCachedBreeds(breedCount: number): Array<string> {
+    if (this.cachedDogBreeds.length < breedCount) {
+      const totalCount = this.cachedDogBreeds.length;
+      const message = `Requested breed count must not be greater than ${totalCount}`;
+      throw new Error(message);
+    }
+
+    const shuffled = shuffle(this.cachedDogBreeds);
+    return slice(shuffled, 0, breedCount); 
   }
 
   private setCachedDogBreeds(breeds: string[]) {
