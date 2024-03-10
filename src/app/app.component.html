@@ -1,9 +1,11 @@
 <main class="app-container">
   <div class="app-content-container">
     <h1>{{ title }}</h1>
-    <dog-bingo-input 
-      (cardGenerateClick)="onCardGenerateClick($event)"
-    />
+    <div class="app-input-container">
+      <dog-bingo-input 
+        (cardGenerateClick)="onCardGenerateClick($event)"
+      />
+    </div>
     <dog-bingo-card 
       *ngFor="let index of renderSequence"
       [cardDimension]="renderMetrics.cardDimension"

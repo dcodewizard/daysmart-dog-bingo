@@ -1,0 +1,17 @@
+.dbt-container {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto Slab Bold';
+  background-color: #ffffff;
+  display: flex;
+  border: 2px solid #000;
+  justify-content: center;
+  align-items: center;
+}
+
+.dbt-container > * {
+  max-width: 100%; 
+  overflow: hidden;
+  white-space: nowrap; 
+  text-overflow: ellipsis; 
+}

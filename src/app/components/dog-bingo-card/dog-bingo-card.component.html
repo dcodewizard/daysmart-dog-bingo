@@ -1,5 +1,5 @@
-<dog-bingo-tile 
-  *ngFor="let breed of dogBreeds"
-  [breedName]="breed"
-/>
-
+<div class="db-card-container">
+  <div [ngClass]="getClassMapping(cardDimension)">
+    <dog-bingo-tile *ngFor="let breed of dogBreeds" [breedName]="breed" />
+  </div>
+</div>

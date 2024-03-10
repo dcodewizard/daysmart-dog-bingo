@@ -6,7 +6,7 @@ import { DogbreedService } from '../../services/dogbreed/dogbreed.service';
   templateUrl: './dog-bingo-card.component.html',
   styleUrl: './dog-bingo-card.component.scss'
 })
-export class DogBingoCardComponent implements OnInit,OnChanges {
+export class DogBingoCardComponent implements OnInit, OnChanges {
   dogBreeds: string[] = [];
   @Input() cardDimension?: number;
   @Input() cardCount?: number;
@@ -19,6 +19,16 @@ export class DogBingoCardComponent implements OnInit,OnChanges {
 
   ngOnChanges(): void {
     this.populateBreeds();
+  }
+
+  getClassMapping(cardDimension?: number): any {
+    return {
+      'db-card-grid-container-col-5': cardDimension! == 5,
+      'db-card-grid-container-col-4': cardDimension! == 4,
+      'db-card-grid-container-col-3': cardDimension! == 3,
+      'db-card-grid-container-col-2': cardDimension! == 2,
+      'db-card-grid-container-col-1': cardDimension! == 1,
+    };
   }
 
   populateBreeds() {
