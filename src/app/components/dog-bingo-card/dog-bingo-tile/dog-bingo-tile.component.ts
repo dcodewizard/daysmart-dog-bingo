@@ -1,6 +1,6 @@
 import { Input, Component } from '@angular/core';
 
-export const MAXIMUM_LENGTH = 10;
+export const MAXIMUM_LENGTH = 7;
 
 @Component({
   selector: 'dog-bingo-tile',
