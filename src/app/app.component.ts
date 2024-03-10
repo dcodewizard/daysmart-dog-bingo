@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { CardMetricEventValue, InitialCardMetricValue } from './components/dog-bingo-input/dog-bingo-input.component';
+import { InitialCardMetrics } from './components/dog-bingo-input/dog-bingo-input.component';
+import type { CardMetricEventValue } from './components/dog-bingo-input/dog-bingo-input.component.types';
 import { DogbreedService } from './services/dogbreed/dogbreed.service';
 import { Subscription } from 'rxjs';
 
@@ -10,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'daysmart-dog-bingo';
-  cardMetrics: [number, number] = [InitialCardMetricValue, InitialCardMetricValue];
+  cardMetrics: CardMetricEventValue = InitialCardMetrics;
   subscription?: Subscription;
 
   constructor(private dogBreedsService: DogbreedService) {}
