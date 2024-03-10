@@ -4,8 +4,7 @@
       Generate 
       <input 
         type="number" 
-        min="0"
-        max="5"
+        allowNumbersUpto [upto]="5"
         [(ngModel)]="cardCount" 
         (input)="onCardMetricsEvent()"
       >
@@ -15,8 +14,7 @@
       each with
       <input 
         type="number" 
-        min="0"
-        max="5"
+        allowNumbersUpto [upto]="5"
         [(ngModel)]="cardDimension" 
         (input)="onCardMetricsEvent()"
       >

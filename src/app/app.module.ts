@@ -9,13 +9,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DogBingoInputComponent } from './components/dog-bingo-input/dog-bingo-input.component';
 import { DogBingoCardComponent } from './components/dog-bingo-card/dog-bingo-card.component';
 import { DogBingoTileComponent } from './components/dog-bingo-card/dog-bingo-tile/dog-bingo-tile.component';
+import { AllowNumbersUptoDirective } from './directives/allow-numbers-upto.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     DogBingoInputComponent,
     DogBingoCardComponent,
-    DogBingoTileComponent
+    DogBingoTileComponent,
+    AllowNumbersUptoDirective
   ],
   imports: [
     BrowserModule,
