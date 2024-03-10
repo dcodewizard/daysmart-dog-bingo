@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter, OnInit } from '@angular/core';
 import type { CardMetricEventValue } from './dog-bingo-input.component.types';
 
 export const InitialCardMetrics: CardMetricEventValue = {
-  cardCount: 1, cardDimension: 5,
+  cardCount: 0, cardDimension: 0,
 };
 
 @Component({

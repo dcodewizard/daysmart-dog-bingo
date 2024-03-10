@@ -6,6 +6,10 @@
     (cardMetricEvent)="onCardMetricEvent($event)"
     (cardGenerateClick)="onCardGenerateClick()"
   />
+  <dog-bingo-card 
+    *ngFor="let index of getCardRenderSequence()"
+    [cardDimension]="renderMetrics.cardDimension"
+  />
 </main>
 
 <router-outlet />
