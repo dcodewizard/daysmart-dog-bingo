@@ -11,7 +11,7 @@ import { range } from 'lodash';
   styleUrl: './app.component.scss'
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'daysmart-dog-bingo';
+  title = 'Dog Bingo';
   renderMetrics: CardInputMetrics = InitialCardMetrics;
   subscription?: Subscription;
 

@@ -1,1 +1,19 @@
+.app-container {
+  margin-top: 100px;
+}
 
+.app-content-container {
+  width: fit-content;
+  margin: 1px auto 1px auto;
+  text-align: left;
+}
+
+.app-content-container h1 {
+  font-family: 'Roboto Slab Bold';
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 63px;
+  letter-spacing: 0em;
+  text-align: left;
+  width: 233px;
+}

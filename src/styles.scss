@@ -3,6 +3,43 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
+/* Roboto Slab Variable Font */
+@font-face {
+  font-family: 'Roboto Slab Variable';
+  src: url('./assets/fonts/RobotoSlab-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+/* Roboto Slab Black */
+@font-face {
+  font-family: 'Roboto Slab Black';
+  src: url('./assets/fonts/static/RobotoSlab-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Roboto Slab Bold */
+@font-face {
+  font-family: 'Roboto Slab Bold';
+  src: url('./assets/fonts/static/RobotoSlab-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Roboto Slab Regular */
+@font-face {
+  font-family: 'Roboto Slab Regular';
+  src: url('./assets/fonts/static/RobotoSlab-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Background color according to Figma spec */
+body {
+  background-color: #cccccc;
+}
+
 /* Prevent arrows from appearing for <input type="number"> */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {

@@ -1,26 +1,30 @@
-<div>
-  <div>
-    <section>
-      Generate 
-      <input 
-        type="number" 
-        allowNumbersUpto [upto]="5"
-        [(ngModel)]="cardCount" 
-        (input)="onCardInputsChange()"
-      >
-      random bingo cards
-    </section>
-    <section>
-      each with
-      <input 
-        type="number" 
-        allowNumbersUpto [upto]="5"
-        [(ngModel)]="cardDimension" 
-        (input)="onCardInputsChange()"
-      >
-        rows/columns
-    </section>
-    <section>
+<div class="dbi-container">
+  <div class="dbi-content-container">
+    <div class="dbi-content-sections-container">
+      <section class="dbi-content-section">
+        <p>Generate</p>
+        <input 
+          class="dbi-input"
+          type="number" 
+          allowNumbersUpto [upto]="5"
+          [(ngModel)]="cardCount" 
+          (input)="onCardInputsChange()"
+        >
+          <p>random bingo cards,</p>
+      </section>
+      <section class="dbi-content-section">
+        <p>each with</p>
+        <input 
+          class="dbi-input"
+          type="number" 
+          allowNumbersUpto [upto]="5"
+          [(ngModel)]="cardDimension" 
+          (input)="onCardInputsChange()"
+        >
+          <p>rows/columns</p>
+      </section>
+    </div>
+    <div class="dbi-button-container">
       <button 
         type="button" 
         class="btn btn-primary"
@@ -29,7 +33,7 @@
       >
         Generate
       </button>
-    </section>
+    </div>
   </div>
 </div>
 
