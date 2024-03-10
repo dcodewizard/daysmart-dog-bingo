@@ -1,7 +1,7 @@
 import { Component, Output, EventEmitter, OnInit } from '@angular/core';
-import type { CardMetricEventValue } from './dog-bingo-input.component.types';
+import type { CardInputMetrics } from './dog-bingo-input.component.types';
 
-export const InitialCardMetrics: CardMetricEventValue = {
+export const InitialCardMetrics: CardInputMetrics = {
   cardCount: 0, cardDimension: 0,
 };
 
@@ -13,10 +13,9 @@ export const InitialCardMetrics: CardMetricEventValue = {
 export class DogBingoInputComponent implements OnInit{
   cardCount: number = InitialCardMetrics.cardCount
   cardDimension: number = InitialCardMetrics.cardDimension;
-  @Output() cardMetricEvent = new EventEmitter<CardMetricEventValue>();
 
   canGenerateCards: boolean = false;
-  @Output() cardGenerateClick = new EventEmitter();
+  @Output() cardGenerateClick = new EventEmitter<CardInputMetrics>();
   
   ngOnInit(): void {
     this.updateCanGenerateCards();
@@ -28,13 +27,12 @@ export class DogBingoInputComponent implements OnInit{
 
   onCardGenerateClick() {
     if (this.canGenerateCards) {
-      this.cardGenerateClick.emit();
+      const [cardCount, cardDimension] = [this.cardCount, this.cardDimension];
+      this.cardGenerateClick.emit({ cardCount, cardDimension });
     }
   }
 
-  onCardMetricsEvent() {
-    const [cardCount, cardDimension] = [this.cardCount, this.cardDimension];
-    this.cardMetricEvent.emit({ cardCount, cardDimension });
+  onCardInputsChange() {
     this.updateCanGenerateCards();
   }
 }

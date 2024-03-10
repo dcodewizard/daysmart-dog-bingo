@@ -6,7 +6,7 @@
         type="number" 
         allowNumbersUpto [upto]="5"
         [(ngModel)]="cardCount" 
-        (input)="onCardMetricsEvent()"
+        (input)="onCardInputsChange()"
       >
       random bingo cards
     </section>
@@ -16,7 +16,7 @@
         type="number" 
         allowNumbersUpto [upto]="5"
         [(ngModel)]="cardDimension" 
-        (input)="onCardMetricsEvent()"
+        (input)="onCardInputsChange()"
       >
         rows/columns
     </section>

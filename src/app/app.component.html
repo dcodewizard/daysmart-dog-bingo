@@ -3,8 +3,7 @@
     <h1>{{ title }}</h1>
   </div>
   <dog-bingo-input 
-    (cardMetricEvent)="onCardMetricEvent($event)"
-    (cardGenerateClick)="onCardGenerateClick()"
+    (cardGenerateClick)="onCardGenerateClick($event)"
   />
   <dog-bingo-card 
     *ngFor="let index of getCardRenderSequence()"

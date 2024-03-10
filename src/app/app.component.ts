@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { InitialCardMetrics } from './components/dog-bingo-input/dog-bingo-input.component';
-import type { CardMetricEventValue } from './components/dog-bingo-input/dog-bingo-input.component.types';
+import type { CardInputMetrics } from './components/dog-bingo-input/dog-bingo-input.component.types';
 import { DogbreedService } from './services/dogbreed/dogbreed.service';
 import { Subscription } from 'rxjs';
 import { range } from 'lodash';
@@ -12,8 +12,7 @@ import { range } from 'lodash';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'daysmart-dog-bingo';
-  cardMetrics: CardMetricEventValue = InitialCardMetrics;
-  renderMetrics: CardMetricEventValue = InitialCardMetrics;
+  renderMetrics: CardInputMetrics = InitialCardMetrics;
   subscription?: Subscription;
 
   constructor(private dogBreedsService: DogbreedService) {}
@@ -34,11 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
     return range(0, this.renderMetrics.cardCount);
   }
 
-  onCardMetricEvent(value: CardMetricEventValue) {
-    this.cardMetrics = value;
-  }
-
-  onCardGenerateClick() {
-    this.renderMetrics = {...this.cardMetrics};
+  onCardGenerateClick(e: CardInputMetrics) {
+    this.renderMetrics = {...e};
   }
 }

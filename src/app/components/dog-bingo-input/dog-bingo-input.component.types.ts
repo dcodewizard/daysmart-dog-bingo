@@ -1,4 +1,4 @@
-export type  CardMetricEventValue = {
+export type  CardInputMetrics = {
   cardCount: number;
   cardDimension: number;
 };
