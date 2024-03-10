@@ -9,6 +9,10 @@ export const MAXIMUM_LENGTH = 7;
 })
 export class DogBingoTileComponent {
   @Input() breedName?: string
+  
+  getFullBreedName(): string {
+    return this.breedName || "";
+  }
 
   widthCorrectedName(): string {
     return this.breedName!.length > MAXIMUM_LENGTH
