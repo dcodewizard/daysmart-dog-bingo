@@ -13,6 +13,7 @@ import { range } from 'lodash';
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Dog Bingo';
   renderMetrics: CardInputMetrics = InitialCardMetrics;
+  renderSequence: Array<number> = [];
   subscription?: Subscription;
 
   constructor(private dogBreedsService: DogbreedService) {}
@@ -29,11 +30,8 @@ export class AppComponent implements OnInit, OnDestroy {
     }
   }
 
-  getCardRenderSequence() {
-    return range(0, this.renderMetrics.cardCount);
-  }
-
   onCardGenerateClick(e: CardInputMetrics) {
     this.renderMetrics = {...e};
+    this.renderSequence = range(0, this.renderMetrics.cardCount);
   }
 }

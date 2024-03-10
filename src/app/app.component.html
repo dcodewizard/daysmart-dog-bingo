@@ -5,8 +5,9 @@
       (cardGenerateClick)="onCardGenerateClick($event)"
     />
     <dog-bingo-card 
-      *ngFor="let index of getCardRenderSequence()"
+      *ngFor="let index of renderSequence"
       [cardDimension]="renderMetrics.cardDimension"
+      [cardCount]="renderMetrics.cardCount"
     />
   </div>
 </main>
